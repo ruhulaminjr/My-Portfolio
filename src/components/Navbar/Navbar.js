@@ -22,11 +22,14 @@ const Navbar = () => {
             <NavLink to="/" className="navitem">
               Home
             </NavLink>
+            <NavLink to="/about" className="navitem">
+              About Me
+            </NavLink>
             <NavLink to="/contact" className="navitem">
               Contact
             </NavLink>
-            <NavLink to="/" className="navitem">
-              Projects
+            <NavLink to="/blogs" className="navitem">
+              Blogs
             </NavLink>
             <a
               href="https://drive.google.com/file/d/1M-4HgNr6d9TdaTWyLfwZCbT_KSL-fIJp/view?usp=sharing"
@@ -49,14 +52,14 @@ const Navbar = () => {
             <AiOutlineCloseCircle className="text-white text-3xl" />
           </button>
           <div className="flex flex-col gap-3 items-center justify-center w-full h-full">
-            <NavLink to="/" className="navitem">
+            <NavLink to="/contact" className="navitem">
+              Contact
+            </NavLink>
+            <NavLink to="/blogs" className="navitem">
+              Blogs
+            </NavLink>
+            <NavLink to="/about" className="navitem">
               About Me
-            </NavLink>
-            <NavLink to="/" className="navitem">
-              Projects
-            </NavLink>
-            <NavLink to="/" className="navitem">
-              Skills
             </NavLink>
             <a
               href="https://drive.google.com/file/d/1M-4HgNr6d9TdaTWyLfwZCbT_KSL-fIJp/view?usp=sharing"
