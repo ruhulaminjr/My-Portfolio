@@ -1,30 +1,36 @@
 import React, { useRef } from "react";
 import Navbar from "../Navbar/Navbar";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
 init("user_wXBwhZttmuHsN2PC4O2zR");
 const Contact = () => {
-     const form = useRef();
+  const form = useRef();
+  const MySwal = withReactContent(Swal);
 
-     const sendEmail = (e) => {
-       e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-       emailjs
-         .sendForm(
-           "service_tlb9zds",
-           "template_dphrspp",
-           form.current,
-           "user_wXBwhZttmuHsN2PC4O2zR"
-         )
-         .then(
-           (result) => {
-             console.log(result);
-           },
-           (error) => {
-             console.log(error.text);
-           }
-         );
-     };
+    emailjs
+      .sendForm(
+        "service_tlb9zds",
+        "template_dphrspp",
+        form.current,
+        "user_wXBwhZttmuHsN2PC4O2zR"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          if (result.text === "OK") {
+            MySwal.fire("Good job!", "Your Email Send Succesfully");
+          }
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div>
       <Navbar />

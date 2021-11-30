@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router";
-import { AiOutlineEye } from "react-icons/ai";
+import { useLocation, useNavigate } from "react-router";
+import { AiOutlineEye, AiOutlineHome } from "react-icons/ai";
 import { AiOutlineCode } from "react-icons/ai";
 import { BiCodeCurly } from "react-icons/bi";
 
@@ -9,6 +9,7 @@ const Project = () => {
   const [data, setData] = useState({});
   const location = useLocation();
   const pathid = location.pathname.split("/")[2];
+  const navigate = useNavigate();
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -28,7 +29,12 @@ const Project = () => {
   return (
     <div className="flex items-center h-screen justify-center">
       <div className="container mx-auto bg-primary shadow-xl rounded-xl py-8 px-3 ">
-        <div>Back</div>
+        <div>
+          <button className="text-gray-800 bg-white py-2 px-3 flex gap-2 font-bold rounded-md items-center" onClick={()=> navigate("/")}>
+            <AiOutlineHome />
+            Home
+          </button>
+        </div>
         <div className="flex flex-col gap-6 items-center justify-center">
           <h1 className="text-white text-center lg:text-4xl font-bold">
             {data.title}
