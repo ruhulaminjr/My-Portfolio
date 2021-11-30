@@ -13,7 +13,7 @@ import mui from "../../images/mui.png";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-28">
       <div className="flex items-center justify-center mt-10 flex-col gap-3">
         <h1 className="lg:text-4xl md:text-3xl text-2xl text-gray-100 font-bold">
           Hi,I'm <span className="text-yellow-400">Ruhul Amin</span>
